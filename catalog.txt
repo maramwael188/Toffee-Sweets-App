@@ -1,0 +1,15 @@
+Chocolate Truffle, Sweet Delights, Indulge in the richness of these creamy chocolate truffles., Confectionery, 2.50, 50
+Vanilla Cupcake, Heavenly Bakes, Classic vanilla-flavored cupcake topped with buttercream frosting., Bakery, 3.00, 40
+Red Velvet Cake, Velvet Treats, Moist red velvet cake with luscious cream cheese frosting., Bakery, 4.50, 20
+Fruit Tart, Fresh Delights, A delightful tart filled with a medley of fresh fruits and a sweet glaze., Bakery, 5.50, 15
+Caramel Brownie, Sweet Bliss, Rich chocolate brownie topped with a generous layer of caramel sauce., Confectionery, 3.50, 35
+Lemon Meringue Pie, Citrus Delights, Tangy lemon filling topped with fluffy meringue on a buttery crust., Bakery, 4.75, 25
+Chocolate Chip Cookies, Homemade Treats, Classic homemade cookies packed with chocolate chips., Bakery, 1.50, 100
+Salted Caramel Macarons, Petite Delights, Delicate French macarons filled with luscious salted caramel., Bakery, 2.00, 60
+Berry Cheesecake, Creamy Indulgence, Creamy cheesecake with a swirl of mixed berry compote on a graham cracker crust., Bakery, 5.75, 18
+Pistachio Baklava, Exotic Sweets, Layers of flaky pastry filled with sweet pistachios and honey syrup., Confectionery, 2.50, 45
+Tiramisu, Italian Treats, Traditional Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream., Bakery, 6.00, 22
+Peanut Butter Fudge, Nutty Delights, Smooth and creamy fudge with a rich peanut butter flavor., Confectionery, 2.75, 30
+Strawberry Shortcake, Berrylicious Sweets, Light and fluffy sponge cake layered with fresh strawberries and whipped cream., Bakery, 4.25, 28
+Cinnamon Roll, Cinnamony Treats, Soft and gooey cinnamon rolls with a sweet glaze., Bakery, 3.50, 32
+Assorted Truffle Box, Delightful Chocolates, A box of various chocolate truffles in different flavors., Confectionery, 12.00, 12
