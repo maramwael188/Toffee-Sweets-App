@@ -2,30 +2,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Order {
-    private ArrayList<Order> orders;
-    private String customerName;
-    private String customerAddress;
-    private int customerPhone;
+    protected ArrayList<Order> orders;
+
     private boolean orderPlaced;
-    private boolean orderDelivered;
+   // private boolean orderDelivered;
     private ShoppingCart Cart;
     private Payment payment;
+    private Customer customer;
     private int orderID = 0;
     private boolean orderStatus = true;
-
-    public Order(ShoppingCart cart){
-        this.Cart = cart;
-
-    }
-    public Order(String customerName, String customerAddress, int customerPhone, ShoppingCart Cart) {
+    public Order(ShoppingCart Cart, Customer customer) {
         this.Cart = Cart;
-        this.orderPlaced = true;
+        this.customer = customer;
+        this.orderPlaced = false;
         //this.orderDelivered = false;
-        this.orderID += 1;
-        this.customerPhone = customerPhone;
-        this.customerAddress = customerAddress;
-        this.customerName = customerName;
-        this.orders = new ArrayList<Order>();
+        this.orders = new ArrayList<>();
     }
 
     public void makeOrder() {
@@ -45,14 +36,20 @@ public class Order {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your name:");
-        customerName = scanner.nextLine();
+        String customerName = scanner.nextLine();
+        customer.setCustomerName(customerName);
         System.out.println("Enter your address:");
-        customerAddress = scanner.nextLine();
+        String customerAddress = scanner.nextLine();
+        customer.setCustomerAddress(customerAddress);
         System.out.println("Enter your phone number:");
-        customerPhone = scanner.nextInt();
-        System.out.println(customerName + ", Your order will be delivered to " + customerAddress + " and you will be contacted at " + customerPhone + " when it arrives.");
-        Order order = new Order(customerName, customerAddress, customerPhone, Cart);
-        orders.add(order);
+        int customerPhone = scanner.nextInt();
+        orderID += 1;
+        customer.setCustomerPhone(customerPhone);
+        System.out.println("Your order ID is: " + orderID);
+        System.out.println(customer.getCustomerName() + ", Your order will be delivered to " +customer.getCustomerAddress() + " and you will be contacted at " + customer.getCustomerPhone() + " when it arrives.");
+       // Order order = new Order(Cart, customer);
+       // orders.add(order);
+        orderPlaced = false;
     }
 
   /*      while (!orderDelivered) {
@@ -66,23 +63,32 @@ public class Order {
             }
         }
     }*/
-    public void getOrders(){
-        for (Order order : orders) {
-            System.out.println("Name: " + customerName);
-            System.out.println("Address " + customerAddress);
-            System.out.println("Phone " + customerPhone);
-            Cart.displayCart();
-        }
-    }
-        public void closedOrder(){
+        public void closedOrder(Payment payment){
             if (orderStatus) {
-                if (payment.pay()) {
+                if (payment.getFlag()) {
                     orderStatus = false;
                     System.out.println("Thank you for your order!");
+                    Order order = new Order(Cart, customer);
+                    orders.add(order);
+                    Cart.emptyCart();
                 }
                 else{
                     System.out.println("Order can't be closed!");
                 }
             }
+            orderStatus = true;
         }
+        public boolean getOrderStatus(){
+            return orderPlaced;
+        }
+
+    public void viewOrders(){
+        for (Order order : orders) {
+            System.out.println("Order ID: " + orderID);
+            System.out.println("Name: " + customer.getCustomerName());
+            System.out.println("Address: " + customer.getCustomerAddress());
+            System.out.println("Phone: " + customer.getCustomerPhone());
+            Cart.displayCart();
+        }
+    }
  }
